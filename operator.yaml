@@ -1,8 +1,8 @@
 apiVersion: operators.coreos.com/v1
-kind: CatalogSourceConfig
+kind: OperatorGroup
 metadata:
-  name: quay-operator
-  namespace: openshift-marketplace
+  name: quay-operator 
+  namespace: test-argo
 spec:
-  targetNamespace: test-argo 
-  packages: quay-operator 
+  targetNamespaces:
+  - test-argo
