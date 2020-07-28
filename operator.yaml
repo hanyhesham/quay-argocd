@@ -2,7 +2,7 @@ apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
   name: quay-operator 
-  namespace: quay 
+  namespace: test-quay 
 spec:
   targetNamespaces:
-  - quay 
+  - test-quay
