@@ -1,1 +1,2 @@
 namespace: quay
+dbsize: 10Gi

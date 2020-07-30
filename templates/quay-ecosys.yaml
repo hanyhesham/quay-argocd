@@ -7,6 +7,8 @@ spec:
     imagePullSecretName: redhat-pull-secret
     enabled: true
   quay:
+    database:
+      volumeSize: {{ .Values.dbsize | quote }} 
     enableRepoMirroring: true
     imagePullSecretName: redhat-pull-secret 
     envVars:
