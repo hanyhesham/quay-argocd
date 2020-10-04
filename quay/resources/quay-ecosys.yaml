@@ -9,7 +9,7 @@ spec:
     enabled: true
   quay:
     database:
-      volumeSize: 10GB 
+      volumeSize: 10Gi 
     enableRepoMirroring: true
     imagePullSecretName: redhat-pull-secret 
     envVars:
