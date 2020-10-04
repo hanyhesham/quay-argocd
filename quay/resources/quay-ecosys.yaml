@@ -1,0 +1,17 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: QuayEcosystem
+metadata:
+  name: quayecosystem
+  namespace: quay
+spec:
+  clair:
+    imagePullSecretName: redhat-pull-secret
+    enabled: true
+  quay:
+    database:
+      volumeSize: 10GB 
+    enableRepoMirroring: true
+    imagePullSecretName: redhat-pull-secret 
+    envVars:
+      - name: DEBUGLOG
+        value: "true"
