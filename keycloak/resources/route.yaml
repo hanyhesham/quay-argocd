@@ -1,15 +1,15 @@
 ---
-apiVersion: v1
+apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  annotations:
-    description: Route for application's https service.
   labels:
     application: keycloak
   name: keycloak
-  namespace: keycloak
 spec:
+  host: keycloak-keycloak.apps.mycluster.mycluster.hhesham.com
   tls:
     termination: passthrough
   to:
+    kind: Service
     name: keycloak
+    weight: 100
