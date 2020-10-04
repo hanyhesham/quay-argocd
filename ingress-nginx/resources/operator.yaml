@@ -1,0 +1,9 @@
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: nginx-ingress-operator 
+  namespace: ingress-nginx
+spec:
+  targetNamespaces:
+  - ingress-nginx
