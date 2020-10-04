@@ -4,6 +4,7 @@
     labels:
       application: keycloak 
     name: keycloak
+    namespace: keycloak
   spec:
     replicas: 1
     selector:

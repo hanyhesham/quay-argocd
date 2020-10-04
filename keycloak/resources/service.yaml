@@ -6,6 +6,7 @@
     labels:
       application: keycloak 
     name: keycloak
+    namespace: keycloak
   spec:
     ports:
       - port: 8443
