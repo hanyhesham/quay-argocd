@@ -1,0 +1,73 @@
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+allowHostNetwork: false
+allowHostPID: false
+allowHostPorts: false
+allowPrivilegeEscalation: true
+allowPrivilegedContainer: false
+allowedCapabilities: null
+apiVersion: security.openshift.io/v1
+defaultAddCapabilities:
+- NET_BIND_SERVICE
+fsGroup:
+  type: RunAsAny
+groups:
+- system:authenticated
+kind: SecurityContextConstraints
+metadata:
+  generation: 1
+  managedFields:
+  - apiVersion: security.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:allowHostDirVolumePlugin: {}
+      f:allowHostIPC: {}
+      f:allowHostNetwork: {}
+      f:allowHostPID: {}
+      f:allowHostPorts: {}
+      f:allowPrivilegeEscalation: {}
+      f:allowPrivilegedContainer: {}
+      f:allowedCapabilities: {}
+      f:defaultAddCapabilities: {}
+      f:fsGroup: {}
+      f:groups: {}
+      f:priority: {}
+      f:readOnlyRootFilesystem: {}
+      f:requiredDropCapabilities: {}
+      f:runAsUser:
+        .: {}
+        f:type: {}
+        f:uid: {}
+      f:seLinuxContext:
+        .: {}
+        f:type: {}
+      f:supplementalGroups:
+        .: {}
+        f:type: {}
+      f:users: {}
+      f:volumes: {}
+    manager: nginx-ingress-operator
+    operation: Update
+  - apiVersion: security.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:fsGroup:
+        f:type: {}
+    manager: oc
+    operation: Update
+  name: nginx-ingress-scc
+priority: 20
+readOnlyRootFilesystem: false
+requiredDropCapabilities:
+- ALL
+runAsUser:
+  type: MustRunAs
+  uid: 101
+seLinuxContext:
+  type: MustRunAs
+supplementalGroups:
+  type: MustRunAs
+users:
+- ingress-nginx:my-nginx-ingress-controller
+volumes:
+- secret
