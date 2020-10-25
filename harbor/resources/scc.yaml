@@ -65,8 +65,13 @@ runAsUser:
 seLinuxContext:
   type: MustRunAs
 supplementalGroups:
-  type: MustRunAs
+  type: RunAsAny
 users:
 - ingress-nginx:my-nginx-ingress-controller
 volumes:
+- configMap
+- downwardAPI
+- emptyDir
+- persistentVolumeClaim
+- projected
 - secret
