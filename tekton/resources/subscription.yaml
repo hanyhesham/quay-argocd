@@ -1,0 +1,21 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Deployable
+metadata:
+  labels:
+    app: tekton 
+    apps.open-cluster-management.io/channel: tekton-channel
+    apps.open-cluster-management.io/channel-type: Namespace
+  name: tekton-sub
+  namespace: tekton-sub
+spec:
+  template:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: Subscription
+    metadata:
+      name: openshift-pipelines-operator
+      namespace: openshift-operators
+    spec:
+      channel: ocp-4.5
+      name: openshift-pipelines-operator-rh 
+      source: redhat-operators 
+      sourceNamespace: openshift-marketplace
